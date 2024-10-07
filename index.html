@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html, body {
+        width: 100%;
+        height: 100%;
+        background-color: skyblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section{
+       /*  background-color: orange; */
+        font-size: 100px;
+        color: white;
+        cursor: pointer;
+        user-select: none;
+    }
+    .letter {
+        display: inline-block;
+        transition: 0.5s;
+        font-weight: 600;
+        transform-origin: center bottom;
+    }
+</style>
+<body>
+    <section id = "design">
+            <span class="letter">D</span>
+            <span class="letter">e</span>
+            <span class="letter">s</span>
+            <span class="letter">i</span>
+            <span class="letter">g</span>
+            <span class="letter">n</span>
+    </section>
+    <script>
+        const letters = document.querySelectorAll('.letter');
+
+        document.querySelector('#design').addEventListener('click', function() {
+            letters.forEach((Letter, index) => {
+                setTimeout(()=>{
+                    Letter.style.transform = 'scaleY(2)';
+                }, index * 100);
+                setTimeout(()=>{
+                    Letter.style.transform = 'scaleY(1)';
+                }, (index * 100) + 500);
+            });
+        })
+    </script>
+
+</body>
+</html>
